@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/arjunbhargava/activematter/xmlutils"
 	"os"
 	"path/filepath"
+
+	"github.com/arjunbhargava/activematter/data/xmlutils"
 )
 
 func parseDirectory(s string) {
@@ -15,7 +16,6 @@ func parseDirectory(s string) {
 	} else {
 		for _, record := range fileList {
 			xmlutils.ParseOAIXML(record)
-			return
 		}
 	}
 }
