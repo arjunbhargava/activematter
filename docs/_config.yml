@@ -20,17 +20,103 @@
 
 title: Arjun Bhargava
 email: arjun@activematter.io
-description: >- # this means to ignore newlines until "baseurl:"
-     Thoughts from my flop era
-baseurl: "" # the subpath of your site, e.g. /blog
+description: "Thoughts from my flop era"
+baseurl: "/docs" # the subpath of your site, e.g. /blog
 url: "https://activematter.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: arjunbarjun
+twitter:
+  username: arjunbarjun
 github_username:  arjunbhargava
 
 # Build settings
 remote_theme: "mmistakes/so-simple-theme@3.2.0"
+skin: "/assets/css/skins/default.css"
+locale: en-US
+date_format: "%B %-d, %Y"
+read_time: true
+words_per_minute: 200
+mathjax:
+  enable: true
+#  combo: "tex-mml-chtml"
+#  tags: "none"
+google_fonts:
+  - name: "Source Sans Pro"
+    weights: "400,400i,700,700i"
+  - name: "Lora"
+    weights: "400,400i,700,700i"
+google_analytics: # Google Analytics id, e.g. "UA-NNNNNNNN-N"
+
+# Liquid
+liquid:
+  error_mode: strict
+
+# Build settings
+markdown: kramdown
+feed:
+  path: atom.xml
+
+# Pagination - https://jekyllrb.com/docs/pagination/
+paginate: 10
+paginate_path: /page:num/
+
+# Search
+search_full_content: true
+
+# Taxonomy pages
+category_archive_path: "/categories/#"
+tag_archive_path: "/tags/#"
+
 plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-paginate
+
+# Collections
+collections:
+  recipes:
+    output: true
+    permalink: /:collection/:path/
+
+# Front Matter Defaults
+defaults:
+  # Post defaults
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      comments: true
+      share: true
+  # Recipe defaults
+  - scope:
+      path: "_recipes"
+      type: recipes
+    values:
+      layout: post
+      comments: true
+      share: true
+
+# Site Author
+author:
+  name: Arjun Bhargava
+  email: arjun@otherlab.com
+  twitter: arjunbarjun
+  links:
+    - title: Twitter
+      url: https://twitter.com/arjunbarjun
+      icon: fab fa-twitter-square
+    - title: GitHub
+      url: https://github.com/arjunbhargava
+      icon: fab fa-github-square
+
+# Footer Links
+footer_links:
+  - title: Twitter
+    url: https://twitter.com/arjunbarjun
+    icon: fab fa-twitter-square
+  - title: GitHub
+    url: https://github.com/arjunbargava
+    icon: fab fa-github-square
 
 # Exclude from processing.
 # The following items will not be processed, by default.
